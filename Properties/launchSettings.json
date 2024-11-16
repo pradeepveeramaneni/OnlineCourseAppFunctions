@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "online_course_functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7264",
+      "launchBrowser": false
+    }
+  }
+}
