@@ -26,7 +26,7 @@ namespace LSC.OnlineCourse.Functions.Email
             //var userFullName = $"{videoRequest.User.LastName},{videoRequest.User.FirstName}";
             //var to = new EmailAddress(videoRequest.User.Email, userFullName);
             var to = new EmailAddress(userEmailId, userFullName);
-            var cc = new EmailAddress(configuration["From"], "Learn Smart Coding");
+            var cc = new EmailAddress(configuration["From"], "Mail Notification Coding");
 
             /*
               <option value="Requested">Requested</option>

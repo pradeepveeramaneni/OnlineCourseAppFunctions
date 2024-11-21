@@ -1,18 +1,17 @@
-using System;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Azure.Functions.Worker.Extensions.Sql;
-using Microsoft.Extensions.Logging;
 using LSC.OnlineCourse.Functions.Email;
-using Microsoft.Extensions.Configuration;
 using LSC.OnlineCourse.Functions.Entities;
 using LSC.OnlineCourse.Functions.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Extensions.Sql;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System.Configuration;
 using System.Text.Json;
 
-namespace online_course_functions
+namespace LSC.OnlineCourse.Functions
 {
     public class VideoRequestTrigger
     {
@@ -28,7 +27,6 @@ namespace online_course_functions
             this.configuration = configuration;
         }
 
-        // Visit https://aka.ms/sqltrigger to learn how to use this trigger binding
         [Function("VideoRequestTrigger")]
         public async Task RunAsync(
             [SqlTrigger("[dbo].[VideoRequest]", "DbContext")] IReadOnlyList<SqlChange<VideoRequest>> videoRequests,
@@ -114,4 +112,3 @@ namespace online_course_functions
         }
     }
 }
-
